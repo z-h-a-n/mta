@@ -32,19 +32,14 @@ var getOffLine = eval(prompt('which line are you getting off?'));
 var getOffStop = prompt('which stop are you getting off?');
 
 
-
-
-if (getOnLine === getOffLine) {
-	var numberOfStops = function () {
+var numberOfStops = function() {
+	if (getOnLine === getOffLine) {
 		return Math.abs(getOnLine.indexOf(getOnStop) - getOffLine.indexOf(getOffStop));
-	};
-}
-
-if (getOnLine !== getOffLine) {
-	var numberOfStops = function () {
+	} else {
 		return Math.abs(getOnLine.indexOf(getOnStop) - getOnLine.indexOf(intersect())) + Math.abs(getOffLine.indexOf(getOffStop) - getOffLine.indexOf(intersect()));
-	};
-}
-
+	}
+};
 
 alert(numberOfStops());
+
+// console.log(numberOfStops());
